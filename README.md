@@ -5,6 +5,7 @@ This project extends Graph Convolution Networks (GCN) for applications in brain 
 ## Two parts of the project:
 
 1: Compare BrainNetCNN with Graph Convolutional Network on ABIDE data set. You will have to download the ABIDE data set from their website in order for the code to work.
+
 2: Extend the GCN to our proposed IGCN model, and compare performance with GCN. 
 
 More details about the project will come in next commit.
