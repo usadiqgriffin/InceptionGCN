@@ -1,0 +1,901 @@
+layer {
+  name: "data1"
+  type: "HDF5Data"
+  top: "data1"
+  top: "data2"
+  top: "label"
+  hdf5_data_param {
+    source: "/home/usmansadiq/DeepLearn/ann4brains/examples/generated_synthetic_data/train.h5.txt"
+    batch_size: 10
+  }
+}
+layer {
+  name: "Convolution1"
+  type: "Convolution"
+  bottom: "data2"
+  top: "Convolution1"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  convolution_param {
+    num_output: 16
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+    kernel_h: 110
+    kernel_w: 1
+  }
+}
+layer {
+  name: "Concat1"
+  type: "Concat"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  bottom: "Convolution1"
+  top: "Concat1"
+  concat_param {
+    axis: 2
+  }
+}
+layer {
+  name: "Convolution2"
+  type: "Convolution"
+  bottom: "data2"
+  top: "Convolution2"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  convolution_param {
+    num_output: 16
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+    kernel_h: 1
+    kernel_w: 110
+  }
+}
+layer {
+  name: "Concat2"
+  type: "Concat"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  bottom: "Convolution2"
+  top: "Concat2"
+  concat_param {
+    axis: 3
+  }
+}
+layer {
+  name: "Eltwise1"
+  type: "Eltwise"
+  bottom: "Concat1"
+  bottom: "Concat2"
+  top: "Eltwise1"
+  eltwise_param {
+    operation: SUM
+  }
+}
+layer {
+  name: "Convolution3"
+  type: "Convolution"
+  bottom: "Eltwise1"
+  top: "Convolution3"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  convolution_param {
+    num_output: 16
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+    kernel_h: 1
+    kernel_w: 110
+  }
+}
+layer {
+  name: "Dropout1"
+  type: "Dropout"
+  bottom: "Convolution3"
+  top: "Convolution3"
+  dropout_param {
+    dropout_ratio: 0.5
+  }
+}
+layer {
+  name: "ReLU1"
+  type: "ReLU"
+  bottom: "Convolution3"
+  top: "Convolution3"
+  relu_param {
+    negative_slope: 0.330000013113
+  }
+}
+layer {
+  name: "InnerProduct1"
+  type: "InnerProduct"
+  bottom: "Convolution3"
+  top: "InnerProduct1"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 16
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "InnerProduct2"
+  type: "InnerProduct"
+  bottom: "InnerProduct1"
+  top: "InnerProduct2"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 16
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "ReLU2"
+  type: "ReLU"
+  bottom: "InnerProduct2"
+  top: "InnerProduct2"
+  relu_param {
+    negative_slope: 0.330000013113
+  }
+}
+layer {
+  name: "out1"
+  type: "InnerProduct"
+  bottom: "InnerProduct2"
+  top: "out1"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "Convolution4"
+  type: "Convolution"
+  bottom: "data1"
+  top: "Convolution4"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  convolution_param {
+    num_output: 16
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+    kernel_h: 110
+    kernel_w: 1
+  }
+}
+layer {
+  name: "Concat3"
+  type: "Concat"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  bottom: "Convolution4"
+  top: "Concat3"
+  concat_param {
+    axis: 2
+  }
+}
+layer {
+  name: "Convolution5"
+  type: "Convolution"
+  bottom: "data1"
+  top: "Convolution5"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  convolution_param {
+    num_output: 16
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+    kernel_h: 1
+    kernel_w: 110
+  }
+}
+layer {
+  name: "Concat4"
+  type: "Concat"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  bottom: "Convolution5"
+  top: "Concat4"
+  concat_param {
+    axis: 3
+  }
+}
+layer {
+  name: "Eltwise2"
+  type: "Eltwise"
+  bottom: "Concat3"
+  bottom: "Concat4"
+  top: "Eltwise2"
+  eltwise_param {
+    operation: SUM
+  }
+}
+layer {
+  name: "Convolution6"
+  type: "Convolution"
+  bottom: "Eltwise2"
+  top: "Convolution6"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  convolution_param {
+    num_output: 16
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+    kernel_h: 1
+    kernel_w: 110
+  }
+}
+layer {
+  name: "Dropout2"
+  type: "Dropout"
+  bottom: "Convolution6"
+  top: "Convolution6"
+  dropout_param {
+    dropout_ratio: 0.5
+  }
+}
+layer {
+  name: "ReLU3"
+  type: "ReLU"
+  bottom: "Convolution6"
+  top: "Convolution6"
+  relu_param {
+    negative_slope: 0.330000013113
+  }
+}
+layer {
+  name: "InnerProduct3"
+  type: "InnerProduct"
+  bottom: "Convolution6"
+  top: "InnerProduct3"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 16
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "InnerProduct4"
+  type: "InnerProduct"
+  bottom: "InnerProduct3"
+  top: "InnerProduct4"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 16
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "ReLU4"
+  type: "ReLU"
+  bottom: "InnerProduct4"
+  top: "InnerProduct4"
+  relu_param {
+    negative_slope: 0.330000013113
+  }
+}
+layer {
+  name: "out2"
+  type: "InnerProduct"
+  bottom: "InnerProduct4"
+  top: "out2"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "Concat5"
+  type: "Concat"
+  bottom: "out1"
+  bottom: "out2"
+  top: "Concat5"
+}
+layer {
+  name: "out"
+  type: "InnerProduct"
+  bottom: "Concat5"
+  top: "out"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "loss"
+  type: "EuclideanLoss"
+  bottom: "out"
+  bottom: "label"
+  top: "loss"
+}

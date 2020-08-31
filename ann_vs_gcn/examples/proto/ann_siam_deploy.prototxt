@@ -1,0 +1,171 @@
+layer {
+  name: "data1"
+  type: "DummyData"
+  top: "data1"
+  dummy_data_param {
+    shape {
+      dim: 1
+      dim: 2
+      dim: 110
+      dim: 110
+    }
+  }
+}
+layer {
+  name: "data2"
+  type: "DummyData"
+  top: "data2"
+  dummy_data_param {
+    shape {
+      dim: 1
+      dim: 2
+      dim: 110
+      dim: 110
+    }
+  }
+}
+layer {
+  name: "InnerProduct1"
+  type: "InnerProduct"
+  bottom: "data2"
+  top: "InnerProduct1"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 2
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "ReLU1"
+  type: "ReLU"
+  bottom: "InnerProduct1"
+  top: "InnerProduct1"
+  relu_param {
+    negative_slope: 0.330000013113
+  }
+}
+layer {
+  name: "out1"
+  type: "InnerProduct"
+  bottom: "InnerProduct1"
+  top: "out1"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "InnerProduct2"
+  type: "InnerProduct"
+  bottom: "data1"
+  top: "InnerProduct2"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 2
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "ReLU2"
+  type: "ReLU"
+  bottom: "InnerProduct2"
+  top: "InnerProduct2"
+  relu_param {
+    negative_slope: 0.330000013113
+  }
+}
+layer {
+  name: "out2"
+  type: "InnerProduct"
+  bottom: "InnerProduct2"
+  top: "out2"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
+layer {
+  name: "Concat1"
+  type: "Concat"
+  bottom: "out1"
+  bottom: "out2"
+  top: "Concat1"
+}
+layer {
+  name: "out"
+  type: "InnerProduct"
+  bottom: "Concat1"
+  top: "out"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 2.0
+    decay_mult: 0.0
+  }
+  inner_product_param {
+    num_output: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }
+}
